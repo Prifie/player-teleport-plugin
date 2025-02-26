@@ -4,3 +4,13 @@ main: net.bricn.utilityPlugin.UtilityPlugin
 api-version: '1.21'
 authors: [ enbraining ]
 website: bricn.net
+commands:
+  tpa:
+    description: 상대방에게 텔레포트 요청을 보냅니다.
+    usage: /tpa enbraining
+  tpaccept:
+    description: 텔레포트 요청을 수락합니다.
+    usage: /tpaccept
+  tpdeny:
+    description: 텔레포트 요청을 수락합니다.
+    usage: /tpdeny
