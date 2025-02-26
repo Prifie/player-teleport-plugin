@@ -1,6 +1,7 @@
 package net.bricn.utilityPlugin
 
 import net.bricn.utilityPlugin.commands.TpAcceptCommand
+import net.bricn.utilityPlugin.commands.TpDenyCommand
 import net.bricn.utilityPlugin.commands.TpaCommand
 import net.bricn.utilityPlugin.events.PlayerEvent
 import net.bricn.utilityPlugin.repository.TeleportRepository
@@ -19,6 +20,10 @@ class UtilityPlugin: JavaPlugin() {
         server
             .getPluginCommand("tpaccept")
             ?.setExecutor(TpAcceptCommand(teleportRepository))
+
+        server
+            .getPluginCommand("tpdeny")
+            ?.setExecutor(TpDenyCommand(teleportRepository))
 
         server
             .pluginManager
