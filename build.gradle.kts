@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "net.bricn"
-version = "1.0-SNAPSHOT"
+version = "v0.1.0-alpha"
 
 repositories {
     mavenCentral()
