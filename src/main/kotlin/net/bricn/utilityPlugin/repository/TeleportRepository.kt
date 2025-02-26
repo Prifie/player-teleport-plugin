@@ -35,6 +35,6 @@ class TeleportRepository {
 
     fun removeExpiredPlayer(senderPlayer: Player){
         val currentTime = LocalDateTime.now()
-        teleportRequestList.removeIf { it.senderPlayer == senderPlayer && it.expiredAt.isAfter(currentTime) }
+        teleportRequestList.removeIf { it.senderPlayer == senderPlayer && it.expiredAt.isBefore(currentTime) }
     }
 }
