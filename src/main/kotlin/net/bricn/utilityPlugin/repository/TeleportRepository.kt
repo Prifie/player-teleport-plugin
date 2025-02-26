@@ -17,7 +17,7 @@ class TeleportRepository {
     }
 
     fun removeBySenderPlayer(senderPlayer: Player){
-        teleportRequestList.removeIf { it.requestedPlayer == senderPlayer }
+        teleportRequestList.removeIf { it.senderPlayer == senderPlayer }
     }
 
     fun putPlayer(senderPlayer: Player, requestedPlayer: Player, expiresMinute: Long) {
