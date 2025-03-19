@@ -1,6 +1,6 @@
-name: utilityPlugin
+name: playerTeleportPlugin
 version: '1.0-SNAPSHOT'
-main: net.bricn.utilityPlugin.UtilityPlugin
+main: net.bricn.playerTeleportPlugin.PlayerTeleportPlugin
 api-version: '1.21'
 authors: [ enbraining ]
 website: bricn.net

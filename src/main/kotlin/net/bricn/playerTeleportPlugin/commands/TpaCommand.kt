@@ -1,6 +1,6 @@
-package net.bricn.utilityPlugin.commands
+package net.bricn.playerTeleportPlugin.commands
 
-import net.bricn.utilityPlugin.repository.TeleportRepository
+import net.bricn.playerTeleportPlugin.repository.TeleportRepository
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.command.Command

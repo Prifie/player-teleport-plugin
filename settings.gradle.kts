@@ -1,1 +1,1 @@
-rootProject.name = "utilityPlugin"
+rootProject.name = "playerTeleportPlugin"

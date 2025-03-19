@@ -1,4 +1,4 @@
-package net.bricn.utilityPlugin.repository
+package net.bricn.playerTeleportPlugin.repository
 
 import org.bukkit.entity.Player
 import java.time.LocalDateTime

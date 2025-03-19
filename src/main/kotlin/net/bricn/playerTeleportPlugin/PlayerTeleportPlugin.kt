@@ -1,13 +1,12 @@
-package net.bricn.utilityPlugin
+package net.bricn.playerTeleportPlugin
 
-import net.bricn.utilityPlugin.commands.TpAcceptCommand
-import net.bricn.utilityPlugin.commands.TpDenyCommand
-import net.bricn.utilityPlugin.commands.TpaCommand
-import net.bricn.utilityPlugin.events.PlayerEvent
-import net.bricn.utilityPlugin.repository.TeleportRepository
+import net.bricn.playerTeleportPlugin.commands.TpAcceptCommand
+import net.bricn.playerTeleportPlugin.commands.TpDenyCommand
+import net.bricn.playerTeleportPlugin.commands.TpaCommand
+import net.bricn.playerTeleportPlugin.repository.TeleportRepository
 import org.bukkit.plugin.java.JavaPlugin
 
-class UtilityPlugin: JavaPlugin() {
+class PlayerTeleportPlugin: JavaPlugin() {
     companion object {
         private val teleportRepository = TeleportRepository()
     }
@@ -15,7 +14,7 @@ class UtilityPlugin: JavaPlugin() {
     override fun onEnable() {
         server
             .getPluginCommand("tpa")
-            ?.setExecutor(TpaCommand(teleportRepository, this@UtilityPlugin))
+            ?.setExecutor(TpaCommand(teleportRepository, this@PlayerTeleportPlugin))
 
         server
             .getPluginCommand("tpaccept")
@@ -24,10 +23,6 @@ class UtilityPlugin: JavaPlugin() {
         server
             .getPluginCommand("tpdeny")
             ?.setExecutor(TpDenyCommand(teleportRepository))
-
-        server
-            .pluginManager
-            .registerEvents(PlayerEvent(), this)
     }
 
     override fun onDisable() {

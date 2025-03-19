@@ -1,15 +1,13 @@
-package net.bricn.utilityPlugin.commands
+package net.bricn.playerTeleportPlugin.commands
 
-import net.bricn.utilityPlugin.repository.TeleportRepository
+import net.bricn.playerTeleportPlugin.repository.TeleportRepository
 import org.bukkit.ChatColor
-import org.bukkit.Location
-import org.bukkit.World
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
 
-class TpDenyCommand(
+class TpAcceptCommand(
     private val teleportRepository: TeleportRepository
 ): CommandExecutor {
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
@@ -18,6 +16,7 @@ class TpDenyCommand(
             val teleportRequest = teleportRepository.findByRequestedPlayer(requestedPlayer)
                 ?: throw RuntimeException("텔레포트 요청을 찾을 수 없습니다.")
 
+            teleportRequest.senderPlayer.teleport(requestedPlayer.location)
             teleportRepository.removeBySenderPlayer(teleportRequest.senderPlayer)
 
             return true
